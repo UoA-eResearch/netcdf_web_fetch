@@ -1,5 +1,6 @@
 #!/bin/bash
 # Install dependencies
+apt update
 apt install libzstd-dev libhdf5-dev libcurl4-openssl-dev gcc make wget m4
 cd /tmp
 # Download netcdf C source code
