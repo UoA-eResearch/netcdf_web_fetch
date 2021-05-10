@@ -8,7 +8,7 @@ from a web server if it sends the `Accept-Ranges: bytes` response header, by sen
 However, netcdf-bin from the default Ubuntu package repository does not have byterange support enabled, so you need to compile it yourself.
 
 ## Compile and install netcdf-c with byterange support
-`sudo install.sh`
+`sudo ./install.sh`
 
 ## Usage
 
