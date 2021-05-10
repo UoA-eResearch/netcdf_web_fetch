@@ -27,7 +27,7 @@ This takes ~6s
 ```bash
 file=`head -1 filelist.txt`
 outfile=`basename $file`
-time nccopy -v SSH "$file#bytes" $outfile
+time nccopy -V SSH "$file#bytes" $outfile
 ```
 
 This takes ~14m
@@ -37,5 +37,5 @@ This takes ~14m
 ```bash
 file=`head -1 filelist.txt`
 outfile=`basename $file`
-time nccopy -v SSH,SHF,TAUX,TAUY,ADVT,HMXL,HBLT,ADVU,ADVV,GRADX,GRADY,HDIFFU,HDIFFV,VDIFFU,VDIFFV,UVEL,VVEL,KE,WVEL,PD "$file#bytes" $outfile
+time nccopy -V SSH,SHF,TAUX,TAUY,ADVT,HMXL,HBLT,ADVU,ADVV,GRADX,GRADY,HDIFFU,HDIFFV,VDIFFU,VDIFFV,UVEL,VVEL,KE,WVEL,PD "$file#bytes" $outfile
 ```
