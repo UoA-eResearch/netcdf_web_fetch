@@ -36,6 +36,10 @@ This takes ~14m
 
 ```bash
 file=`head -1 filelist.txt`
-outfile=`basename $file`
-time nccopy -V SSH,SHF,TAUX,TAUY,ADVT,HMXL,HBLT,ADVU,ADVV,GRADX,GRADY,HDIFFU,HDIFFV,VDIFFU,VDIFFV,UVEL,VVEL,KE,WVEL,PD "$file#bytes" $outfile
+variables=(SSH SHF TAUX TAUY ADVT HMXL HBLT ADVU ADVV GRADX GRADY HDIFFU HDIFFV VDIFFU VDIFFV UVEL VVEL KE WVEL PD)
+for var in "${variables[@]}"; do
+    outfile=`basename -s .nc $file`_$var.nc
+    echo "Downloading $outfile"
+    time nccopy -V $var "$file#bytes" $outfile
+done
 ```
