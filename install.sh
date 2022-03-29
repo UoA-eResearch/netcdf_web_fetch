@@ -4,10 +4,10 @@ apt update
 apt install libzstd-dev libhdf5-dev libcurl4-openssl-dev gcc make wget m4
 cd /tmp
 # Download netcdf C source code
-wget https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-4.8.0.tar.gz
+wget https://downloads.unidata.ucar.edu/netcdf-c/4.8.1/netcdf-c-4.8.1.tar.gz
 # Decompress
-tar xvf netcdf-c-4.8.0.tar.gz
-cd netcdf-c-4.8.0
+tar xvf netcdf-c-4.8.1.tar.gz
+cd netcdf-c-4.8.1
 # Include HDF5 library locations
 # Make sure this configure output says Byte-Range Support:     yes
 CFLAGS="-I/usr/include/hdf5/serial" LDFLAGS="-L/usr/lib/x86_64-linux-gnu/hdf5/serial/" ./configure --enable-byterange
@@ -19,4 +19,4 @@ make install
 ldconfig
 cd /tmp
 # Clean up
-rm -rf netcdf-c-4.8.0.tar.gz netcdf-c-4.8.0
+rm -rf netcdf-c-4.8.1.tar.gz netcdf-c-4.8.1
